@@ -1,0 +1,964 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: system-ui;
+    background-color: #222;
+    color: #fff;
+}
+
+/* ==================================================
+                        HEADER
+  =================================================== */
+
+.header {
+    z-index: 999;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    padding: 10px 10px 0 10px;
+}
+
+.header .logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-size: cover;
+    background-image: url(../images/logo.jpeg);
+    background-position: center;
+    float: left;
+}
+
+.header-container {
+    float: right;
+}
+
+.header-container .header-list {
+    float: left;
+    margin: 15px;
+}
+
+.header-container .header-list li {
+    display: inline-block;
+    margin-right: 15px;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.header-container .header-list li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: gold;
+    left: 0;
+    margin-top: 2px;
+    border-radius: 5px;
+    width: 0;
+}
+
+.header-container .header-list li:hover::after {
+    width: 100%;
+    transition: .5s;
+}
+
+.header-container .search-box {
+    padding: 0 15px;
+    float: right;
+    position: relative;
+}
+
+.header-container .search-box input {
+    background-color: #fff;
+    border: 0;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 15px 30px;
+}
+
+.header-container .search-box button {
+    position: absolute;
+    background-color: transparent;
+    padding: 0 10px 0 10px;
+    height: 100%;
+    color: gold;
+}
+
+.header .dropdown {
+    padding: 10px;
+    width: 210px;
+    background-color: #222;
+    position: absolute;
+    top: 27px;
+    z-index: 9;
+    left: 0;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    border: solid 1px gold;
+    visibility: hidden;
+    opacity: .1;
+}
+
+.header .dropdown:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+.header .dropdown ul li {
+    padding: 5px 0;
+    position: relative;
+    width: fit-content;
+    cursor: pointer;
+    margin: 10px 5px 10px 5px;
+}
+
+.header .dropdown ul li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: gold;
+    left: 0;
+    margin-top: 3px;
+    border-radius: 5px;
+    width: 0;
+}
+
+.header .dropdown ul li:hover::after {
+    width: 100%;
+    transition: .5s;
+}
+
+.select {
+    width: fit-content;
+    position: relative;
+}
+
+.select:hover .dropdown {
+    visibility: visible;
+    opacity: 0.8;
+    transition: 1.5s;
+}
+
+.sections {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+}
+
+/* ==================================================
+                        SECTION 1
+  =================================================== */
+
+.sec1 {
+    background-image: url(../images/sec1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.sec1 .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #22222296;
+}
+
+.sec1 .sec1-content {
+    z-index: 9;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 55%;
+    transform: translate(-50%);
+}
+
+.sec1 .sec1-content h2 {
+    font-size: 50px;
+    text-transform: capitalize;
+    padding: 10px;
+}
+
+.sec1 .sec1-content p {
+    padding: 10px;
+    text-transform: capitalize;
+}
+
+.sec1 .sec1-content button {
+    padding: 12px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 10px;
+    text-transform: capitalize;
+    transition: .5s;
+}
+
+.sec1 .sec1-content .started {
+    background-color: gold;
+    color: #222;
+    margin-left: 10px;
+}
+
+.sec1 .sec1-content .started:hover{
+    background-color: #222;
+    color: gold;
+    border: 1px gold solid;
+    transition: .5s;
+}
+
+.sec1 .sec1-content button:active {
+    font-size: 18px;
+}
+
+.sec .title {
+    font-size: 30px;
+    position: relative;
+    text-transform: capitalize;
+    top: 10vh;
+}
+
+.sec .title::after {
+    content: "";
+    width: 80px;
+    height: 3px;
+    background-color: gold;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 20px;
+}
+
+/* ==================================================
+                        SECTION 2 & 4
+  =================================================== */
+
+.sec2-container,
+.sec4-container {
+    width: 90%;
+    margin: auto;
+    overflow: auto;
+}
+
+.sec2 .card,
+.sec4 .card {
+    float: left;
+    border: solid gold 1px;
+    margin: 27vh 20px;
+    padding: 10px;
+    width: 30%;
+    height: 220px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.sec2 .card i,
+.sec2 .card h3,
+.sec2 .card p,
+.sec2 .card a {
+    margin-top: 15px;
+    display: block;
+}
+
+.sec2 .card a {
+    margin: 15px auto;
+    display: block;
+    width: fit-content;
+    color: gold;
+}
+
+.sec2 .card i,
+.sec2 .card h3 {
+    font-size: 25px;
+    text-transform: capitalize;
+}
+
+.sec2 .card::after,
+.sec4 .card::after {
+    content: "";
+    position: absolute;
+    background-color: #ffd70005;
+    border-radius: 10px;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: .6s;
+
+}
+
+.sec2 .card:hover::after,
+.sec4 .card:hover::after {
+    width: 100%;
+    height: 100%;
+    transition: .6s;
+}
+
+/* ==================================================
+                        SECTEION 3
+  =================================================== */
+
+.sec3{
+top: -12vh
+}
+
+.sec3-container {
+    margin: 100px 10%;
+    position: relative;
+    overflow: auto;
+}
+
+.sec3-container .img-container {
+    float: left;
+    margin: 15px;
+    width: 300px;
+    height: 200px;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+}
+
+.sec3-container .img-container img {
+    width: 100%;
+    border-radius: 5px;
+    height: 100%;
+}
+
+.sec3-container .img-container .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #22222280;
+    border-radius: 5px;
+    display: none;
+}
+
+.sec3-container .img-container .layer div {
+    margin-top: 30px;
+}
+
+.sec3-container .img-container .layer div h2 {
+    font-weight: 800;
+    font-size: 27px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.sec3-container .img-container .layer div p {
+    padding: 20px;
+}
+
+.sec3-container .img-container .layer div a {
+    background-color: #292929;
+    border-radius: 5px;
+    padding: 7px 16px;
+}
+
+.sec3-container .img-container .layer div a:hover {
+    color: #f00
+}
+
+.sec3-container .img-container:hover .layer {
+    display: block;
+}
+
+/* ==================================================
+                        SECTEION 4
+  =================================================== */
+
+.sec4-container {
+    margin-top: 120px;
+}
+
+.sec4 .card {
+    margin: 20px;
+    text-align: start;
+    position: relative;
+    padding: 25px 15px 30px 55px;
+}
+
+.sec4 .card h3 {
+    font-size: 28px;
+    display: inline;
+}
+
+.sec4 .card i {
+    position: absolute;
+    left: 15px;
+    top: 25px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.sec4 .card p {
+    padding: 10px 0;
+}
+
+/* ==================================================
+                        SECTEION 5
+  =================================================== */
+
+.sec5 {
+    overflow: auto hidden;
+    top: 10vh;
+}
+
+.sec5 .parts {
+    width: 50%;
+    float: left;
+    text-align: start;
+    position: absolute;
+    top: 10vh;
+}
+
+.sec5 .left-part {
+    padding: 50px 70px;
+    left: 0;
+}
+
+.sec5 .left-part .title {
+    top: 0;
+    height: fit-content;
+}
+
+.sec5 .title::after {
+    left: 0;
+    transform: none;
+}
+
+.sec5 .parts .content {
+    margin-top: 50px;
+}
+
+.sec5 .parts .content p {
+    padding-bottom: 30px;
+}
+
+.sec5 .parts .content ul li {
+    padding: 15px 10px;
+    font-size: 17px;
+}
+
+.sec5 .parts .content ul li i {
+    padding-right: 5px;
+    color: gold;
+}
+
+.sec5 .right-part {
+    right: 0;
+    text-align: center;
+    padding-top: 40px;
+    height: 100%;
+}
+
+.sec5 .right-part .img-container {
+    width: 50%;
+    margin: auto;
+    height: 80%;
+}
+
+.sec5 .right-part .img-container img {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.sec5 .right-part .circles {
+    width: 100%;
+    padding: 10px 0;
+}
+
+.sec5 .right-part .circles span {
+    background-color: gold;
+    width: 12px;
+    height: 12px;
+    margin: 0 3px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    z-index: 9999;
+}
+
+.sec5 .right-part .circles span:hover,
+.sec5 .right-part .circles .active {
+    opacity: .3;
+}
+
+.sec5 .right-part .circles span:active {
+    width: 10px;
+    height: 10px;
+}
+
+/* ==================================================
+                        SECTEION 6
+  =================================================== */
+
+.sec6 {
+    height: 80vh;
+    top: 10vh;
+}
+
+.sec6 .container {
+    width: 100%;
+    height: 50vh;
+    background: transparent url(../images/sec6.jpg) no-repeat fixed center;
+    background-size: cover;
+    position: relative;
+    top: 15vh;
+}
+
+.sec6 .container .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(34, 34, 34, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.sec6 .container .row {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: 9;
+}
+
+.sec6 .container .row span {
+    display: inline-block;
+    width: 20%;
+}
+
+.sec6 .container .row span i {
+    font-size: 40px;
+    padding-bottom: 10px;
+    color: gold;
+}
+
+/* ==================================================
+                        SECTEION 7
+  =================================================== */
+
+.sec7 .container {
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    top: 28vh;
+    border-radius: 10px;
+    padding: 60px 0;
+}
+
+.sec7 .container .card-contanier {
+    overflow: auto;
+    margin: auto;
+    width: fit-content;
+}
+
+.sec7 .container .card-contanier .card {
+    float: left;
+    width: 270px;
+    text-align: center;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: solid 1px gold;
+    position: relative;
+}
+
+.sec7 .container .card-contanier .card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #ffd70005;
+    transition: .5s;
+    z-index: -1;
+
+}
+
+.sec7 .container .card-contanier .card:hover::after {
+    height: 100%;
+    transition: .5s;
+}
+
+.sec7 .card2 {
+    margin: 0 100px;
+}
+
+.sec7 .card .card-header h2 {
+    padding: 10px;
+}
+
+.sec7 .salary {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid gold;
+    margin: 10px auto;
+    font-size: 25px;
+    padding: 30px 0;
+    font-weight: 800;
+}
+
+.sec7 .card .feature,
+.sec7 .buy-btn {
+    padding: 10px;
+}
+
+.sec7 .card .feature strong{
+    color: gold;
+}
+
+.sec7 .buy-btn button {
+    width: 120px;
+    height: 40px;
+    border: solid 1px gold;
+    background-color: gold;
+    color: #222;
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: 600;
+    transition: .6s;
+}
+
+.sec7 .buy-btn button:hover {
+    border: solid 1px gold;
+    transition: .6s;
+    background-color: #222;
+    color: gold;
+}
+
+/* ==================================================
+                        SECTEION 8
+  =================================================== */
+
+.sec8 {
+    height: 80vh;
+}
+
+.sec8 .container {
+    width: 100%;
+    height: 50vh;
+    background: transparent url(https://i.pinimg.com/1200x/9f/21/96/9f2196fc13162d2904804d98c92a11ef.jpg) no-repeat fixed center;
+    background-size: cover;
+    position: relative;
+    top: 25vh;
+}
+
+.sec8 .container .card-container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70%;
+    text-align: start;
+    margin: auto;
+    height: 50%;
+}
+
+.sec8 .container .card {
+    width: 45%;
+    float: left;
+    margin: 0 20px;
+    padding: 10px;
+    text-transform: capitalize;
+}
+
+.sec8 .container .card2 {
+    position: absolute;
+    right: 0;
+}
+
+.sec8 .container .card .row img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.sec8 .container .card .row {
+    padding: 0 10px;
+    position: relative;
+}
+
+.sec8 .container .card .row h3 {
+    color: gold;
+}
+
+.sec8 .container .card .row div {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100px;
+}
+
+.sec8 .container .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(34, 34, 34, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* ==================================================
+                        SECTEION 9
+  =================================================== */
+
+.sec9 {
+    top: 10vh;
+}
+
+.sec9 .title {
+    top: 7vh;
+}
+
+.sec9 .container {
+    width: 90%;
+    margin: auto;
+    position: relative;
+    top: 12vh;
+    overflow: auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.sec9 .container .card {
+    width: 30%;
+    height: 350px;
+    float: left;
+    border: 1px solid gold;
+    margin-left: 2.5vw;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    color: #fff;
+}
+
+.sec9 .container .card * {
+    z-index: 2;
+}
+
+.sec9 .container .card::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    border-radius: 10px;
+    transition: .5s;
+    background-color: rgba(34, 34, 34, 0.5);
+}
+
+.sec9 .container .card:hover::after {
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+}
+
+.sec9 .container .card img {
+    width: 90%;
+    height: 200px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.sec9 .container .card p {
+    padding: 10px 0;
+    text-transform: uppercase;
+}
+
+.sec9 .container .card h2 {
+    padding: 10px 0;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.sec9 .container .card span {
+    display: none;
+    z-index: 9;
+    position: absolute;
+    top: 0;
+    background-color: gold;
+    border-radius: 5px;
+    right: 0;
+}
+
+.sec9 .container .card span a {
+    display: block;
+    height: 40px;
+    line-height: 20px;
+    padding: 10px;
+    color: #222;
+
+}
+
+.sec9 .container .card span a:hover {
+    color: #fff;
+    background-color: #ffd70005;
+}
+
+.sec9 .container .card:hover .social {
+    display: inline;
+}
+
+/* ==================================================
+                        SECTEION 10
+  =================================================== */
+
+.sec10 {
+    top: 0vh;
+}
+
+.sec10 .container {
+    position: relative;
+    top: 18vh;
+    width: 90%;
+    margin: auto;
+    overflow: auto;
+}
+
+.sec10 .container .card {
+    width: 30%;
+    border-radius: 5px;
+    border: solid gold 1px;
+    margin-left: 2.5vw;
+    position: relative;
+    padding: 20px;
+    float: left;
+}
+
+.sec10 .container .card * {
+    z-index: 2;
+}
+
+.sec10 .container .card::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+    z-index: 1;
+    transition: .5s;
+    background-color: #ffd70005;
+}
+
+.sec10 .container .card:hover::after {
+    height: 100%;
+    transition: .5s;
+}
+
+.sec10 .container .card img {
+    width: 90%;
+    height: 200px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.sec10 .container .card .soical-contaienr a {
+    margin: 0 10px;
+}
+
+.sec10 .container .card h3,
+.sec10 .container .card p {
+    padding: 10px;
+}
+
+.sec10 .container .card .read-more {
+    display: block;
+    width: fit-content;
+    padding: 3px 0;
+    position: relative;
+    margin: 10px auto 0 auto;
+}
+
+.sec10 .container .card .read-more::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    background-color: gold;
+    transition: .4s;
+}
+
+.sec10 .container .card .read-more:hover::after {
+    width: 100%;
+    transition: .4s;
+}
+
+/* ==================================================
+                        FOTTER
+  =================================================== */
+
+.fotter {
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    top: 30vh;
+    text-align: center;
+    border-top: dashed gold 1px;
+}
+
+.fotter img {
+    width: 220px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: #222;
+    border: solid 1px gold;
+}
+
+.fotter ul {
+    padding: 20px;
+}
+
+.fotter ul li {
+    width: 70px;
+    margin-left: 20px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: gold;
+    opacity: .3;
+    color: #222;
+    display: inline-block;
+    font-size: 35px;
+    padding-top: 17.5px;
+    font-weight: 900;
+}
+
+.fotter ul li:hover {
+    opacity: 1;
+}
+
+.fotter p {
+    text-transform: uppercase;
+}
